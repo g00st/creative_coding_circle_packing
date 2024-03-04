@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.processing:java-mode:3.3.7'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+}
