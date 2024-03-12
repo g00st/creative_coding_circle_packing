@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 repositories {
     mavenCentral()
@@ -6,6 +7,12 @@ repositories {
 
 dependencies {
     implementation 'org.processing:java-mode:3.3.7'
+    implementation 'org.openpnp:opencv:4.9.0-0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+}
+mainClassName = 'App'
+application {
+    // Specify the directory where native libraries are located
+    applicationDefaultJvmArgs = ["-Djava.library.path=libs/x64/"]
 }
